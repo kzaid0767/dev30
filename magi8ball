@@ -1,0 +1,44 @@
+let userName = prompt('Please enter your name');
+alert(`Hello ${userName}`);
+let userQuestion = prompt(`${userName}, do you want to ask the Magic Eight Ball?`)
+userQuestion = userQuestion.toLocaleLowerCase();
+if (userQuestion==='yes') {
+    playGame();
+}
+else{
+    alert('I was exppecting as yes! \nGoodbye!')
+}
+
+function playGame() {
+    alert(`${userName}, you will get your results in a moment`);
+    let randomNumber = Math.floor(Math.random()*8);
+    let eightBall = '';
+    switch(randomNumber) {
+        case 0:
+            eightBall = 'It is certain'
+            break;
+        case 1:
+            eightBall = 'It is decidely so'
+            break;
+        case 2:
+            eightBall = 'Reply hazy try again'
+            break;
+        case 3:
+            eightBall = 'Cannot predict now'
+            break;
+        case 4:
+            eightBall = 'Do not count on it'
+            break;
+        case 5:
+            eightBall = 'My sources say no'
+            break;
+        case 6:
+            eightBall = 'Outlook not so good'
+            break;
+        default:
+            eightBall = 'Sign point to yes'
+    }
+
+    alert(`Magic Eight Ball says, ${eightBall}`)
+
+}
