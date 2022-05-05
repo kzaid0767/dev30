@@ -1,0 +1,50 @@
+/* Rock destroys scissors
+scissors cut paper
+paper covers rock */
+
+    
+let userInput = prompt('Choose rock, paper, or scissors to play the game\nor cancel to quit');
+
+function getUserChoice (Input) {
+    Input = userInput.toLowerCase() 
+        if (Input==='rock'||Input==='paper'||Input==='scissors'||Input==='bomb') {
+            userInput = Input
+            determineWinner(userInput,getComputerChoice())
+        } else {
+            alert("That is an invalid input")
+            window.location.reload()
+        }   
+}
+
+function getComputerChoice () {
+    return Math.floor(Math.random()*3)
+}
+
+function determineWinner (player,computer){
+    if (player==='rock'&& computer===1) {
+        alert('Computer won by selecting paper!')
+        
+    } else if(player==='rock'&& computer===2) {
+        alert('You win! The computer selected scissors')
+    }
+    else if(player==='paper'&& computer===0) {
+        alert('You win the game! The computer selected rock')
+    } 
+    else if(player==='paper'&& computer===2) {
+        alert('You lose the game! The computer selected scissors')
+    } 
+    else if(player==='scissors'&& computer===0) {
+        alert('You lose the game! The computer selected rock')
+    } 
+    else if(player==='scissors'&& computer===1) {
+        alert('You win the game! The computer selected paper')
+    } 
+    else if(player==='bomb') {
+        alert('You win the game! The computer cannot match that power')
+    } 
+    else {
+        alert('The game is a tie')
+    }
+    window.location.reload()
+}
+getUserChoice(userInput)
